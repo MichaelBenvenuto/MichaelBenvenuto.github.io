@@ -1,0 +1,224 @@
+@font-face {
+	font-family: 'Pixelicious';
+	src: url('Pixelicious.woff2') format('woff2'),
+		url('Pixelicious.woff') format('woff'),
+		url('Pixelicious.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Wide awake';
+	src: url('Wideawake.woff2') format('woff2'),
+		url('Wideawake.woff') format('woff'),
+		url('Wideawake.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face{
+  font-family: 'D3 Digitalism Italic';
+  src: 
+  url('D3DigitalismItalic.woff2') format('woff2'),
+  url('D3DigitalismItalic.woff') format('woff'),
+  url('D3DigitalismItalic.tff') format('truetype');
+
+  font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0px;
+  top: 0px;
+}
+
+.headTitle{
+  position: absolute;
+  font-family: 'Wide awake';
+  color: #27fdf5;
+  font-size: 400%;
+  width: 100%;
+  left: 0px;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 3;
+  animation: title-color-pulse 60s linear infinite;
+}
+
+.sub{
+  position: absolute;
+  font-family: 'D3 Digitalism Italic';
+  font-size: 100%;
+  color: #27fdf5;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 95px;
+  left: 0px;
+  z-index: 4;
+  animation: subtitle-tilt 15s ease-in-out alternate infinite;
+}
+
+div.links{
+  top: 0;
+  height: 40px;
+  font-family: 'Pixelicious', monospace;
+  font-size: 2em;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, .9) -0.06em -0.06em, rgba(67, 144, 126, .9) 0 0;
+}
+
+div.links a{
+  text-align: center;
+  display: inline-block;
+  width: 32%;
+  color: transparent;
+}
+
+div.links a:hover{
+  animation: a-pulse 2s ease-in-out alternate infinite;
+}
+
+div.sky{
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(to top, #e89b33, black 50%);
+  position: fixed;
+  z-index: 0;
+  animation: sky-pulse 5s linear infinite;
+}
+
+div.sky div.sun{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #e89b33, #fd0c05);
+  margin-top: calc(50vh - 155px);
+  margin-left: calc(50vw - 125px);
+  position: fixed;
+  animation: sun-pulse 5s linear infinite;
+  z-index: 2;
+}
+
+div.sky div.trees{
+  position: absolute;
+  background-image: url("palm-tree-2.png");
+  right: 0;
+  bottom: 0%;
+  width: 57vw;
+  height: 96px;
+  z-index: 1;
+  animation: scroll-f 2s linear infinite;
+}
+
+div.sky div.trees-r{
+  position: absolute;
+  background-image: url("palm-tree-2.png");
+  left: 0;
+  bottom: 0%;
+  width: 57vw;
+  height: 96px;
+  z-index: 1;
+  animation: scroll-r 2s linear infinite;
+}
+
+div.ocean{
+  width: 100vw;
+  height: 50vh;
+  margin-top: 50vh;
+  background: radial-gradient(circle at 50vw 0px, #fd0c05, black);
+  position: fixed;
+  z-index: 3;
+}
+
+@keyframes sky-pulse{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: .9;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes sun-pulse{
+  0%{
+    box-shadow: 0px 0px 77px 2vh #e89b33;
+  }
+  50%{
+    box-shadow: 0px 0px 77px 2vh #fd0c05;
+  }
+  100%{
+    box-shadow: 0px 0px 77px 2vh #e89b33;
+  }
+}
+
+@keyframes title-color-pulse{
+  0%{
+    color: #27fdf5;
+  }
+  25%{
+    color: #d7fffe;
+  }
+  50%{
+    color: #f765b8;
+  }
+  75%{
+    color: #d7fffe;
+  }
+  100%{
+    color: #27fdf5;
+  }
+}
+
+@keyframes subtitle-tilt{
+  0%{
+    transform: rotateZ(2deg) scale(1);
+  }
+  50%{
+    transform: rotateZ(-2deg) scale(1.1);
+  }
+  100%{
+    transform: rotateZ(2deg) scale(1);
+  }
+}
+
+@keyframes scroll-f{
+  from{
+    transform: translateX(0px) scaleX(-1);
+  }
+  to{
+    transform: translateX(140px) scaleX(-1);
+  }
+}
+
+@keyframes scroll-r{
+  from{
+    transform: translateX(0px);
+  }
+  to{
+    transform: translateX(-140px);
+  }
+}
+
+@keyframes a-pulse {
+  0% {
+    text-shadow: rgba(255, 255, 255, .9) -0.06em -0.06em, rgba(67, 144, 126, .9) 0 0;
+  }
+  33% {
+    text-shadow: rgba(204, 255, 252, .9) -0.15em -0.15em, rgba(157, 94, 186, .9) 0 0;
+  }
+  66% {
+    text-shadow: rgba(229, 255, 254, .9) -0.06em -0.06em, rgba(157, 94, 186, .9) 0 0;
+  }
+  100% {
+    text-shadow: rgba(179, 255, 251, .9) -0.15em -0.15em, rgba(202, 69, 215, .9) 0 0;
+  }
+}

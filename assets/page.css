@@ -67,6 +67,9 @@ body {
 div.links{
   top: 0;
   height: 40px;
+  margin: 0px 10px;
+  vertical-align: center;
+  text-align: center;
   font-family: 'Pixelicious', monospace;
   font-size: 2em;
   color: transparent;
@@ -74,9 +77,10 @@ div.links{
 }
 
 div.links a{
-  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
   display: inline-block;
-  width: 32%;
+  width: auto;
   color: transparent;
 }
 
@@ -87,7 +91,7 @@ div.links a:hover{
 div.sky{
   width: 100vw;
   height: 50vh;
-  background: linear-gradient(to top, #e89b33, black 50%);
+  background: linear-gradient(to top, #e89b33, transparent 50%);
   position: fixed;
   z-index: 0;
   animation: sky-pulse 5s linear infinite;
@@ -113,7 +117,7 @@ div.sky div.trees{
   width: 57vw;
   height: 96px;
   z-index: 1;
-  animation: scroll-f 2s linear infinite;
+  animation: scroll-f 5s linear infinite;
 }
 
 div.sky div.trees-r{
@@ -124,14 +128,15 @@ div.sky div.trees-r{
   width: 57vw;
   height: 96px;
   z-index: 1;
-  animation: scroll-r 2s linear infinite;
+  animation: scroll-r 5s linear infinite;
 }
 
 div.ocean{
   width: 100vw;
   height: 50vh;
+  vertical-align: middle;
   margin-top: 50vh;
-  background: radial-gradient(circle at 50vw 0px, #fd0c05, black);
+  background: radial-gradient(25vw at 50vw 0px, #fd0c05, black);
   position: fixed;
   z-index: 3;
 }

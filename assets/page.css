@@ -300,7 +300,6 @@ div#projectpage div.background div.city{
   width: 100vw;
   height: 157px;
   animation: city-bounce 1s alternate ease-in-out infinite;
-  background-size: 50% 100%;
 }
 
 /*Cities*/

@@ -28,42 +28,6 @@
 	font-style: normal;
 }
 
-body {
-  background: black;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  margin: 0px;
-  top: 0px;
-}
-
-.headTitle{
-  position: absolute;
-  font-family: 'Wide awake';
-  color: #27fdf5;
-  font-size: 400%;
-  width: 100%;
-  left: 0px;
-  vertical-align: middle;
-  text-align: center;
-  z-index: 3;
-  animation: title-color-pulse 60s linear infinite;
-}
-
-.sub{
-  position: absolute;
-  font-family: 'D3 Digitalism Italic';
-  font-size: 100%;
-  color: #27fdf5;
-  width: 100%;
-  vertical-align: middle;
-  text-align: center;
-  margin-top: 95px;
-  left: 0px;
-  z-index: 4;
-  animation: subtitle-tilt 15s ease-in-out alternate infinite;
-}
-
 div.links{
   top: 0;
   height: 40px;
@@ -74,6 +38,7 @@ div.links{
   font-size: 2em;
   color: transparent;
   text-shadow: rgba(255, 255, 255, .9) -0.06em -0.06em, rgba(67, 144, 126, .9) 0 0;
+  z-index: 4;
 }
 
 div.links a{
@@ -88,16 +53,65 @@ div.links a:hover{
   animation: a-pulse 2s ease-in-out alternate infinite;
 }
 
-div.sky{
+div.page{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 2s ease-in-out;
+}
+
+/*----------------------------*/
+/*---Beginning of main page---*/
+/*----------------------------*/
+
+body {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0px;
+  top: 0px;
+}
+
+div#mainpage .headTitle{
+  position: absolute;
+  font-family: 'Wide awake';
+  color: #27fdf5;
+  font-size: 400%;
+  width: 100%;
+  left: 0px;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 3;
+  animation: title-color-pulse 60s linear infinite;
+}
+
+div#mainpage .sub{
+  position: absolute;
+  font-family: 'D3 Digitalism Italic';
+  font-size: 100%;
+  color: #27fdf5;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 95px;
+  left: 0px;
+  z-index: 4;
+  animation: subtitle-tilt 20s ease-in-out alternate infinite;
+}
+
+div#mainpage div.sky{
   width: 100vw;
   height: 50vh;
-  background: linear-gradient(to top, #e89b33, transparent 50%);
+  background: linear-gradient(to top, #e89b33, transparent 70%);
   position: fixed;
   z-index: 0;
   animation: sky-pulse 5s linear infinite;
 }
 
-div.sky div.sun{
+div#mainpage div.sky div.sun{
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -109,7 +123,7 @@ div.sky div.sun{
   z-index: 2;
 }
 
-div.sky div.trees{
+div#mainpage div.sky div.trees{
   position: absolute;
   background-image: url("palm-tree-2.png");
   right: 0;
@@ -120,7 +134,7 @@ div.sky div.trees{
   animation: scroll-f 5s linear infinite;
 }
 
-div.sky div.trees-r{
+div#mainpage div.sky div.trees-r{
   position: absolute;
   background-image: url("palm-tree-2.png");
   left: 0;
@@ -131,12 +145,12 @@ div.sky div.trees-r{
   animation: scroll-r 5s linear infinite;
 }
 
-div.ocean{
+div#mainpage div.ocean{
   width: 100vw;
   height: 50vh;
   vertical-align: middle;
   margin-top: 50vh;
-  background: radial-gradient(25vw at 50vw 0px, #fd0c05, black);
+  background: radial-gradient(384px at 50vw 0px, #fd0c05, black);
   position: fixed;
   z-index: 3;
 }
@@ -227,3 +241,131 @@ div.ocean{
     text-shadow: rgba(179, 255, 251, .9) -0.15em -0.15em, rgba(202, 69, 215, .9) 0 0;
   }
 }
+
+/*----------------------------*/
+/*------End of main page------*/
+/*----------------------------*/
+/*--Beginning of project page-*/
+/*----------------------------*/
+
+div#projectpage{
+  opacity: 0;
+  pointer-events: none;
+}
+
+div#projectpage div.overlay{
+  position: absolute;
+  width: 95vw;
+  height: 90vh;
+  top: 2.5vh;
+  bottom: 2.5vh;
+  left: 2.5vw;
+  right: 2.5vw;
+  bottom: 0;
+  right: 0;
+  background: black;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+div#projectpage div.overlay h1{
+  position: absolute;
+  font-family: 'Wide awake';
+  font-size: 3em;
+  color: #27fdf5;
+  opacity: 1.3;
+  margin: 0;
+  margin-left: 10px;
+}
+
+div#projectpage div.background{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, transparent,transparent 39%, #fd0c05 40%, transparent 120%);
+}
+
+div#projectpage div.background div.sun{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #fd0c05, #f765b8);
+  box-shadow: 0px 0px 77px 2vh #f765b8;
+  margin-top: calc(50vh - 250px);
+  margin-left: calc(50vw - 150px);
+}
+
+div#projectpage div.background div.city{
+  position: absolute;
+  width: 100vw;
+  height: 157px;
+  background-size: 75%;
+  animation: city-bounce 1s alternate ease-in-out infinite;
+}
+
+/*Cities*/
+div#projectpage div.background div.city#city1{
+  bottom: 28vh;
+  background-image: url("stc-skyline-1.png");
+  animation-delay: 1s;
+}
+
+div#projectpage div.background div.city#city2{
+  background-position-x: 100px;
+  bottom: 32vh;
+  background-image: url("stc-skyline-2.png");
+  animation-delay: 0.75s;
+}
+
+div#projectpage div.background div.city#city3{
+  background-position-x: -163px;
+  bottom: 36vh;
+  background-image: url("stc-skyline-3.png");
+  animation-delay: 0.5s;
+}
+
+div#projectpage div.background div.city#city4{
+  background-position-x: 189px;
+  bottom: 40vh;
+  background-image: url("stc-skyline-4.png");
+  animation-delay: 0.25s;
+}
+
+div#projectpage div.background div.city#city5{
+  background-position-x: -189px;
+  bottom: 44vh;
+  background-image: url("stc-skyline-5.png");
+  animation-delay: 0s;
+}
+/*Cities end*/
+
+div#projectpage div.background div.mountain{
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(to top, #27fdf5, black 60%);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 82% 21%, 73% 34%, 67% 29%, 61% 34%, 51% 30%, 42% 44%, 35% 33%, 25% 25%, 13% 18%, 0 0);
+}
+
+@keyframes city-bounce{
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(10px);
+  }
+}
+
+/*----------------------------*/
+/*-----End of project page----*/
+/*----------------------------*/
+/*----------------------------*/
+/*--Beginning of contact page-*/
+/*----------------------------*/
+
+
+
+/*----------------------------*/
+/*-----End of contact page----*/
+/*----------------------------*/

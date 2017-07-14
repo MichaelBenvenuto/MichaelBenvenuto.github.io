@@ -12,6 +12,34 @@ var currentPage = mainpage;
 mainButton.style.animation = "a-pulse 2s ease-in-out alternate infinite";
 mainButton.style.pointerEvents = "none";
 
+var overlay = document.getElementById("over");
+var header = document.getElementById("head");
+
+jQuery.githubUser = function(username, callback) {
+   jQuery.getJSON('https://api.github.com/users/'+username+'/repos?callback=?',callback)
+}
+ 
+jQuery.fn.loadRepositories = function(username) {
+    var target = this;
+    $.githubUser(username, function(data) {
+        var repos = data.data; // JSON Parsing
+     
+        var list = $('<dl/>');
+        target.append(list);
+        $(repos).each(function() {
+            if (this.name != (username +'.github.io') && !this.fork) {
+                list.append('<div class="projectcontainer"><a>'+this.name+'</a>'
+                +'<plang>('+this.language+')</plang>' 
+                +'<p>' + this.description + '</p></div>');
+            }
+        });      
+      });
+};
+
+$(function() {
+        $("#over").loadRepositories("MichaelBenvenuto");
+});
+
 mainButton.onclick = function(){
     for(var i = 0; i < buttons.length; i++){
         buttons[i].style.pointerEvents = "auto";

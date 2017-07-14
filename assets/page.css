@@ -28,6 +28,55 @@
 	font-style: normal;
 }
 
+h1{
+  position: relative;
+  font-family: 'Wide awake';
+  font-size: 3em;
+  color: #27fdf5;
+  opacity: 1;
+  margin: 0;
+  margin-left: 10px;
+}
+
+h1#main-title{
+  position: absolute;
+  font-family: 'Wide awake';
+  color: #27fdf5;
+  font-size: 400%;
+  width: 100%;
+  left: 0px;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 3;
+  animation: title-color-pulse 60s linear infinite;
+}
+
+h2{
+  font-family: 'Wide awake';
+  color: #f765b8;
+  font-size: 300%;
+  width: auto;
+  margin: 0;
+  margin-left: 60px;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  color: transparent;
+}
+
+a:hover{
+  animation: a-pulse 2s ease-in-out alternate infinite;
+}
+
+p{
+  font-family: 'Pixelicious', monospace;
+  margin-left: 10px;
+}
+
 div.links{
   top: 0;
   height: 40px;
@@ -39,18 +88,6 @@ div.links{
   color: transparent;
   text-shadow: rgba(255, 255, 255, .9) -0.06em -0.06em, rgba(67, 144, 126, .9) 0 0;
   z-index: 4;
-}
-
-div.links a{
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  width: auto;
-  color: transparent;
-}
-
-div.links a:hover{
-  animation: a-pulse 2s ease-in-out alternate infinite;
 }
 
 div.page{
@@ -73,19 +110,6 @@ body {
   overflow: hidden;
   margin: 0px;
   top: 0px;
-}
-
-div#mainpage .headTitle{
-  position: absolute;
-  font-family: 'Wide awake';
-  color: #27fdf5;
-  font-size: 400%;
-  width: 100%;
-  left: 0px;
-  vertical-align: middle;
-  text-align: center;
-  z-index: 3;
-  animation: title-color-pulse 60s linear infinite;
 }
 
 div#mainpage .sub{
@@ -248,6 +272,49 @@ div#mainpage div.ocean{
 /*--Beginning of project page-*/
 /*----------------------------*/
 
+div#projectpage div.overlay dl .projectcontainer{
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 25%;
+  height: 100px;
+  background-color:#0f0f0f;
+  display: inline-table;
+}
+
+div#projectpage div.overlay dl .projectcontainer a{
+  position: relative;
+  font-family: Pixelicious;
+  font-size: 1em;
+  left: 5px;
+  text-decoration: none;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, .9) -0.06em -0.06em, rgba(67, 144, 126, .9) 0 0;
+}
+
+div#projectpage div.overlay dl .projectcontainer a:hover{
+  animation: a-pulse 2s ease-in-out alternate infinite;
+}
+
+div#projectpage div.overlay dl .projectcontainer p{
+  position: relative;
+  font-family: Pixelicious;
+  color: #f765b8;
+  font-size: 0.75em;
+  height: 31px;
+  left: 5px;
+}
+
+div#projectpage div.overlay dl .projectcontainer plang{
+  position: relative;
+  font-family: Pixelicious;
+  font-size: 0.75em;
+  margin-left: 10px;
+  color: #27fdf5;
+  left: 5px;
+}
+
 div#projectpage{
   opacity: 0;
   pointer-events: none;
@@ -263,13 +330,14 @@ div#projectpage div.overlay{
   right: 2.5vw;
   bottom: 0;
   right: 0;
-  background: black;
-  opacity: 0.7;
+  background: rgba(0,0,0,0.7);
   z-index: 1;
+  overflow: auto;
+  max-height: 90vh;
 }
 
-div#projectpage div.overlay h1{
-  position: absolute;
+h1{
+  position: relative;
   font-family: 'Wide awake';
   font-size: 3em;
   color: #27fdf5;
@@ -363,7 +431,26 @@ div#projectpage div.background div.mountain{
 /*--Beginning of contact page-*/
 /*----------------------------*/
 
+div#contactpage{
+  opacity: 0;
+  background: linear-gradient(to top, #fd0c05, #f765b8);
+}
 
+div#contactpage div.overlay{
+  position: absolute;
+  width: 95vw;
+  height: 90vh;
+  top: 2.5vh;
+  bottom: 2.5vh;
+  left: 2.5vw;
+  right: 2.5vw;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+  overflow: auto;
+  max-height: 90vh;
+}
 
 /*----------------------------*/
 /*-----End of contact page----*/

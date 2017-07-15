@@ -26,9 +26,10 @@ jQuery.fn.loadRepositories = function(username) {
      
         var list = $('<dl/>');
         target.append(list);
+        alert(repos);
         $(repos).each(function() {
             if (this.name != (username +'.github.io') && !this.fork) {
-                list.append('<div class="projectcontainer"><a target="_blank" href="' + this.homepage?this.homepage:this.html_link 
+                list.append('<div class="projectcontainer"><a target="_blank" href="' + this.html_link 
                 + '">'+this.name+'</a>'
                 +'<plang>('+this.language+')</plang>' 
                 +'<p>' + this.description + '</p></div>');

@@ -152,7 +152,7 @@ div#mainpage div.sky div.trees{
   background-image: url("palm-tree-2.png");
   right: 0;
   bottom: 0%;
-  width: 57vw;
+  width: 50vw;
   height: 96px;
   z-index: 1;
   animation: scroll-f 5s linear infinite;
@@ -163,7 +163,7 @@ div#mainpage div.sky div.trees-r{
   background-image: url("palm-tree-2.png");
   left: 0;
   bottom: 0%;
-  width: 57vw;
+  width: 50vw;
   height: 96px;
   z-index: 1;
   animation: scroll-r 5s linear infinite;
@@ -366,7 +366,7 @@ div#projectpage div.background div.sun{
 div#projectpage div.background div.city{
   position: absolute;
   width: 100vw;
-  height: 157px;
+  height: 16vh;
   animation: city-bounce 1s alternate ease-in-out infinite;
 }
 
